@@ -11,19 +11,25 @@
     <div class="container">
       <nav>
         <div class="nav__left">FindIT</div>
-
-        <div class="nav__right">
+        <div class="wrapper active">
+          <div class="nav__right">
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Blog</li>
+              <li>Contact</li>
+            </ul>
+          </div>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <li class="Register">Register</li>
+            <li class="login">Login</li>
           </ul>
         </div>
-        <ul>
-          <li class="Register">Register</li>
-          <li class="login">Login</li>
-        </ul>
+        <div class="navBtn">
+          <div class="navBtn__line"></div>
+          <div class="navBtn__line"></div>
+          <div class="navBtn__line"></div>
+        </div>
       </nav>
 
       <section class="home" id="home">
@@ -52,5 +58,25 @@
         </div>
       </section>
     </div>
+
+    <script>
+      const navBtn = document.querySelector(".navBtn");
+      const wrapper = document.querySelector(".wrapper");
+      const nav = document.querySelector(".nav");
+      const nav__right = document.querySelector(".nav__right");
+      const nav__left = document.querySelector(".nav__left");
+      const nav__line = document.querySelectorAll(".navBtn__line");
+      const nav__line1 = document.querySelector(".navBtn__line:nth-child(1)");
+
+      navBtn.addEventListener("click", () => {
+        wrapper.classList.toggle("active");
+        nav.classList.toggle("active");
+        nav__right.classList.toggle("active");
+        nav__left.classList.toggle("active");
+        nav__line.forEach((line) => {
+          line.classList.toggle("active");
+        });
+      });
+    </script>
   </body>
 </html>
